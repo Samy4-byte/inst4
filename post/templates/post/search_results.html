@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h1>Результат поиска</h1>
+  {% for p in results %}
+    <a href="{% url 'post-details' post.id %}">{{ post.title }}</a>
+  {% endfor %}
+{% endblock body %}
+

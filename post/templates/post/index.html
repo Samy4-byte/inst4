@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock title %}
+{% block body%}
+ <h1>Категории:</h1>
+
+ {% for post in posts%}
+  <div>
+      <a href="{% url 'post-details' post.id %}"><p>{{post.title }}</p></a>
+       <p>{{post.description}}</p>
+       <img src="" alt="">
+  </div>
+
+ {% endfor %}
+
+{% endblock body %}

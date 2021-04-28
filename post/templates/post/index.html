@@ -7,7 +7,7 @@
   <div>
       <a href="{% url 'post-details' post.id %}"><p>{{post.title }}</p></a>
        <p>{{post.description}}</p>
-       <img src="" alt="">
+       <img src="{{ post.images.all.0.image.url }}" alt="image">
   </div>
 
  {% endfor %}

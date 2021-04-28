@@ -22,17 +22,15 @@ from post.views import IndexPageView, PostDetailsView, PostListView, PostDeleteV
     PostEditView, SearchResultsView
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('account/', include('account.urls')),
-                  path('', IndexPageView.as_view(), name='index-page'),
-                  path('post/create/', CreatePostView.as_view(), name='create-post'),
-                  path('post/search/', SearchResultsView.as_view(), name='search-results'),
-                  path('post/<slug:post_slug>/', PostListView.as_view(), name='post-list'),
-                  path('post/details/<int:pk>/', PostDetailsView.as_view(), name='post-details'),
-                  path('post/delete/<int:pk>/', PostDeleteView.as_view(), name='delete-post'),
-                  path('post/edit/<int:pk>/', PostEditView.as_view(), name='edit-post'),
-                  path('post/', PostListView.as_view(), name='post-list')
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + \
-              static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+  path('admin/', admin.site.urls),
+  path('account/', include('account.urls')),
+  path('', IndexPageView.as_view(), name='index-page'),
+  path('post/create/', CreatePostView.as_view(), name='create-post'),
+  path('post/search/', SearchResultsView.as_view(), name='search-results'),
+  path('post/<slug:post_slug>/', PostListView.as_view(), name='post-list'),
+  path('post/details/<int:pk>/', PostDetailsView.as_view(), name='post-details'),
+  path('post/delete/<int:pk>/', PostDeleteView.as_view(), name='delete-post'),
+  path('post/edit/<int:pk>/', PostEditView.as_view(), name='edit-post'),
+  path('post/', PostListView.as_view(), name='post-list')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
